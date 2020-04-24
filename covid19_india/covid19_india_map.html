@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Covid 19 India Static</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="https://leafletjs.com/examples/choropleth/docs/images/favicon.ico">
+
+    <link rel="stylesheet" href="./covid19_india/leaflet.css" >
+    <script src="./covid19_india/leaflet.js.download" ></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<style>#indiaMap { width: 100%; height: 600px; position: inherit !important;}
+		.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+		.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
+		body {
+		  overflow: hidden !important; /* Hide scrollbars */}
+	</style>
+	</head>
+<body>
+
+<div id="indiaMap" class="leaflet-container leaflet-retina  leaflet-touch-drag" >
+    <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
+        <div class="leaflet-pane leaflet-tile-pane">
+            <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                <div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="./covid19_india/2" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(-44px, -309px, 0px); opacity: 1;"><img alt="" role="presentation" src="./covid19_india/2(1)" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(468px, -309px, 0px); opacity: 1;"><img alt="" role="presentation" src="./covid19_india/3" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(-44px, 203px, 0px); opacity: 1;"><img alt="" role="presentation" src="./covid19_india/3(1)" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(468px, 203px, 0px); opacity: 1;"></div>
+            </div>
+        </div>
+        <div class="leaflet-pane leaflet-shadow-pane"></div>
+        <div class="leaflet-pane leaflet-marker-pane"></div>
+        <div class="leaflet-pane leaflet-tooltip-pane"></div>
+        <div class="leaflet-pane leaflet-popup-pane"></div>
+        <div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(955.733px, 1582.83px, 0px) scale(8);"></div>
+    </div>
+    <div class="leaflet-control-container">
+        <div class="leaflet-top leaflet-left">
+            <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="https://leafletjs.com/examples/choropleth/example.html#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="https://leafletjs.com/examples/choropleth/example.html#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div>
+        </div>
+        
+        <div class="leaflet-bottom leaflet-right"><div class="info legend leaflet-control"><i style="background:#FFEDA0"></i> 0–10<br><br><i style="background:#FED976"></i> 10–20<br><br><i style="background:#FEB24C"></i> 20–50
+                <br><br><i style="background:#FD8D3C"></i> 50–100
+                <br><br><i style="background:#FC4E2A"></i> 100–200
+                <br><br><i style="background:#E31A1C"></i> 200–500
+                <br><br><i style="background:#BD0026"></i> 500–1000
+                <br><br><i style="background:#800026"></i> 1000+</div>
+        </div>
+        <div class="leaflet-bottom leaflet-left">
+            <div class="info legend leaflet-control"><i style="background:#4D4D4D"></i>&nbsp; <b id="totalCount"></b> <br><br><i style="background:#FF0024"></i>&nbsp; <b id="deathCount"></b> <br><br><i style="background:#137F13"></i>&nbsp; <b id="survivalCount"></b> <br><br><i style="background:#FFA500"></i>&nbsp; <b id="newCases"></b> <br><br><i style="background:#40E740"></i>&nbsp; <b id="newSurvivals"></b> <br><br><i style="background:#EF0C0C"></i>&nbsp; <b id="newDeaths"></b> 
+        </div>
+    </div>
+</div>
+<script type="application/javascript" src="./covid19_india/india_states.geojson"></script>
+<script type="text/javascript" src="./covid19_india/covid19_india_js.js"></script>
+
+<script>
+/**
+	Whenever Page Initialize this function is called first
+*/
+$(document).ready(function(){
+	loadSummryForIndia();
+	loadLatestStateDataForIndia();
+	
+});	
+
+</script>
+
+
+
+
+
+
+
+</body></html>
